@@ -1246,30 +1246,6 @@ class PlayState extends MusicBeatState
 		}
 		#end
 
-        function playCutscene(name:String, atEndOfSong:Bool = false)
-        {
-        	inCutscene = true;
-        	FlxG.sound.music.stop();
-        
-        	var video:VideoHandler = new VideoHandler();
-        	video.finishCallback = function()
-        	{
-        		if (atEndOfSong)
-        		{
-        			if (storyPlaylist.length <= 0)
-        				FlxG.switchState(new StoryMenuState());
-        			else
-        			{
-        				SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
-        				FlxG.switchState(new PlayState());
-        			}
-        		}
-        		else
-        			startCountdown();
-        	}
-        	video.playVideo(Paths.video(name));
-}
-
 		var daSong:String = Paths.formatToSongPath(curSong);
 		if (isStoryMode && !seenCutscene)
 		{
