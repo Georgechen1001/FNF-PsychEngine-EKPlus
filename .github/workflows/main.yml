@@ -194,7 +194,11 @@ jobs:
           haxelib install flixel-ui 
           haxelib install flixel-addons
           haxelib install hscript
+          haxelib install tjson
+          haxelib install hxjsonast
+          haxelib install hxCodec
           haxelib git linc_luajit https://github.com/jigsaw-4277821/linc_luajit.git
+          haxelib git hscript-ex https://github.com/ianharrigan/hscript-ex
           haxelib list
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
