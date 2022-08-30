@@ -52,7 +52,7 @@
 	<define name="TITLE_SCREEN_EASTER_EGG" if="release" /> <!-- DELETE THE if="officialBuild" for enabling this on an unofficial build -->
 	<define name="CRASH_HANDLER" if="release" />
 
-	<assets path="assets/preload/images" if="android"/> <!-- to not have the android assets in another builds -saw -->
+	<assets path="assets/preload/images/androidcontrols" if="android"/> <!-- to not have the android assets in another builds -saw -->
 
 	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
 	<assets path="assets/preload" rename="assets" exclude="*.mp3"  unless="web"/>
@@ -194,6 +194,18 @@
 	<!-- Android stuff: thanks Yoshi Engine -->
 	<android permission="android.permission.ACCESS_NETWORK_STATE"/>
 	<android permission="android.permission.INTERNET"/>
+
+	<!--Make's-the-Game-use-less-ram-->
+	<haxedef name="HXCPP_GC_BIG_BLOCKS" />
+
+	<!--Always-enable-Null-Object-Reference-check-->
+	<haxedef name="HXCPP_CHECK_POINTER" if="release" />
+	<haxedef name="HXCPP_STACK_LINE" if="release" />
+
+	<!--Android-Internet-Connection-->
+	<android permission="android.permission.ACCESS_NETWORK_STATE" />
+	<android permission="android.permission.ACCESS_WIFI_STATE" />
+	<android permission="android.permission.INTERNET" />
 
 	<!-- _________________________________ Custom _______________________________ -->
 
